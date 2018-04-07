@@ -4,6 +4,9 @@ var speed
 var velocity = Vector2()
 var screen_size
 
+var horizontal_entities = ["LeftWall", "RightWall", "BrickSides"]
+var vertical_entities = ["Ceiling", "Paddle", "BrickTopBottom"]
+
 func _ready():
 	speed = 200
 	velocity.x = 1
@@ -15,9 +18,9 @@ func _process(delta):
 	position += velocity * speed * delta
 
 func _on_Ball_area_entered(area):
-	if area.get_name() == "LeftWall" or area.get_name() == "RightWall":
+	if area.get_name() in horizontal_entities:
 		velocity.x *= -1
-	if area.get_name() == "Ceiling" or area.get_name() == "Paddle":
+	if area.get_name() in vertical_entities:
 		velocity.y *= -1
 	if area.get_name() == "DeathZone":
 		position = screen_size / 2
