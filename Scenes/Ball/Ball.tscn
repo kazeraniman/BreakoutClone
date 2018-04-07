@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Ball/Ball.gd" type="Script" id=1]
+[ext_resource path="res://Art/more_breakout_pieces.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 8.41039
+
+[node name="Ball" type="Area2D" index="0"]
+
+position = Vector2( 640, 360 )
+input_pickable = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = -1.0
+angular_damp = -1.0
+collision_layer = 4
+collision_mask = 3
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Linear", "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 16, 128, 16, 16 )
+_sections_unfolded = [ "Region" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="." to="." method="_on_Ball_area_entered"]
+
+
