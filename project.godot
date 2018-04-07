@@ -13,6 +13,12 @@ config_version=3
 config/name="BreakoutClone"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
