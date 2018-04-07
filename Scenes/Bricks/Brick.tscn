@@ -18,9 +18,9 @@ extents = Vector2( 24.0218, 1.57166 )
 position = Vector2( 611.413, 130.14 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 208, 160, 48, 16 )
+region_rect = Rect2( 208, 192, 48, 16 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true,
 "_edit_lock_": true
