@@ -1,6 +1,4 @@
-[gd_scene load_steps=6 format=2]
-
-[ext_resource path="res://Scenes/Walls/Walls.gd" type="Script" id=1]
+[gd_scene load_steps=5 format=2]
 
 [sub_resource type="SegmentShape2D" id=1]
 
@@ -26,9 +24,7 @@ custom_solver_bias = 0.0
 a = Vector2( 0, -1 )
 b = Vector2( 1280, -1 )
 
-[node name="Walls" type="Node"]
-
-script = ExtResource( 1 )
+[node name="Walls" type="Node" index="0"]
 
 [node name="LeftWall" type="Area2D" parent="." index="0"]
 
