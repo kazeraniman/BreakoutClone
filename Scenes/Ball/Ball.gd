@@ -1,5 +1,7 @@
 extends Area2D
 
+signal death
+
 var speed = 200
 var velocity = Vector2(1, 1)
 var screen_size
@@ -23,6 +25,7 @@ func _on_Ball_area_entered(area):
 		velocity.y *= -1
 	# Hit the death zone
 	if area.get_name() == "DeathZone":
+		emit_signal("death")
 		position = screen_size / 2
 	# If we hit the paddle, additionally give more control and change the horizontal to give more control
 	if area.get_name() == "Paddle":
