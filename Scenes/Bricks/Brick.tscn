@@ -13,7 +13,7 @@ extents = Vector2( 8.05116, 1.77289 )
 custom_solver_bias = 0.0
 extents = Vector2( 24.0218, 1.57166 )
 
-[node name="Brick" type="Sprite"]
+[node name="Brick" type="Sprite" index="0"]
 
 position = Vector2( 611.413, 130.14 )
 texture = ExtResource( 1 )
@@ -91,8 +91,11 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 16
+collision_mask = 4
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionBottom" type="CollisionShape2D" parent="BrickBottom" index="0"]
 
@@ -107,8 +110,11 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 16
+collision_mask = 4
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionLeft" type="CollisionShape2D" parent="BrickLeft" index="0"]
 
