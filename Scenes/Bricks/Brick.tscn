@@ -13,7 +13,7 @@ extents = Vector2( 8.05116, 1.77289 )
 custom_solver_bias = 0.0
 extents = Vector2( 24.0218, 1.57166 )
 
-[node name="Brick" type="Sprite" index="0"]
+[node name="Brick" type="Sprite"]
 
 position = Vector2( 611.413, 130.14 )
 texture = ExtResource( 1 )
