@@ -20,38 +20,15 @@ func set_brick_texture_per_level():
 func brick_collision():
 	if hittable:
 		hittable = false
-		$HittableTimout.start()
+		$HittableTimeout.start()
 		health -= 1
 		set_brick_texture_per_level()
 		if health <= 0:
 			emit_signal("brick_destroyed")
 			queue_free()
 
-func _on_BrickSides_area_entered(area):
-	# Turn off collisions so we don't get multi hits.
-	$BrickSides/CollisionLeft.disabled = true
-	$BrickSides/CollisionRight.disabled = true
-	$BrickSides/CollisionTimeout.start()
-	# Apply collision logic
+func _on_Brick_area_entered(area):
 	brick_collision()
 
-func _on_BrickTopBottom_area_entered(area):
-		# Turn off collisions so we don't get multi hits.
-	$BrickTopBottom/CollisionTop.disabled = true
-	$BrickTopBottom/CollisionBottom.disabled = true
-	$BrickSides/CollisionTimeout.start()
-	# Apply collision logic
-	brick_collision()
-
-func _on_BrickSides_CollisionTimeout_timeout():
-	# Re-enable collision detection
-	$BrickSides/CollisionLeft.disabled = false
-	$BrickSides/CollisionRight.disabled = false
-
-func _on_BrickTopBottom_CollisionTimeout_timeout():
-	# Re-enable collision detection
-	$BrickTopBottom/CollisionTop.disabled = false
-	$BrickTopBottom/CollisionBottom.disabled = false
-
-func _on_HittableTimout_timeout():
+func _on_HittableTimeout_timeout():
 	hittable = true

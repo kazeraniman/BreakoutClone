@@ -6,8 +6,10 @@ var speed = 200
 var velocity = Vector2(1, 1)
 var screen_size
 
-var horizontal_entities = ["LeftWall", "RightWall", "BrickSides"]
-var vertical_entities = ["Ceiling", "Paddle", "BrickTopBottom"]
+var bounce_left_entities = ["RightWall", "BrickLeft"]
+var bounce_right_entities = ["LeftWall", "BrickRight"]
+var bounce_up_entities = ["Paddle", "BrickTop"]
+var bounce_down_entities = ["Ceiling", "BrickBottom"]
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -17,12 +19,18 @@ func _process(delta):
 	position += normalized_velocity * speed * delta
 
 func _on_Ball_area_entered(area):
-	# Bounce off of the side of something
-	if area.get_name() in horizontal_entities:
-		velocity.x *= -1
-	# Bounce on the top or bottom of something
-	if area.get_name() in vertical_entities:
-		velocity.y *= -1
+	# Cause a bounce to the left
+	if area.get_name() in bounce_left_entities:
+		velocity.x = abs(velocity.x) * -1
+	# Cause a bounce to the right
+	if area.get_name() in bounce_right_entities:
+		velocity.x = abs(velocity.x)
+	# Cause a bounce upward
+	if area.get_name() in bounce_up_entities:
+		velocity.y = abs(velocity.y) * -1
+	# Cause a bounce downward
+	if area.get_name() in bounce_down_entities:
+		velocity.y = abs(velocity.y)
 	# Hit the death zone
 	if area.get_name() == "DeathZone":
 		emit_signal("death")

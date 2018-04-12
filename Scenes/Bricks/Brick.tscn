@@ -13,7 +13,7 @@ extents = Vector2( 8.05116, 1.77289 )
 custom_solver_bias = 0.0
 extents = Vector2( 24.0218, 1.57166 )
 
-[node name="Brick" type="Sprite" index="0"]
+[node name="Brick" type="Sprite"]
 
 position = Vector2( 611.413, 130.14 )
 texture = ExtResource( 1 )
@@ -27,7 +27,14 @@ __meta__ = {
 }
 health = 3
 
-[node name="BrickSides" type="Area2D" parent="." index="0"]
+[node name="HittableTimeout" type="Timer" parent="." index="0"]
+
+process_mode = 1
+wait_time = 0.25
+one_shot = false
+autostart = false
+
+[node name="BrickRight" type="Area2D" parent="." index="1"]
 
 position = Vector2( 0.0565605, -0.033865 )
 input_pickable = true
@@ -44,15 +51,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionLeft" type="CollisionShape2D" parent="BrickSides" index="0"]
-
-position = Vector2( -22.3101, 0.0769348 )
-rotation = 1.5708
-shape = SubResource( 1 )
-one_way_collision = true
-_sections_unfolded = [ "Transform" ]
-
-[node name="CollisionRight" type="CollisionShape2D" parent="BrickSides" index="1"]
+[node name="CollisionRight" type="CollisionShape2D" parent="BrickRight" index="0"]
 
 position = Vector2( 22.1641, 0.0769501 )
 rotation = -1.5708
@@ -60,14 +59,7 @@ shape = SubResource( 1 )
 one_way_collision = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionTimeout" type="Timer" parent="BrickSides" index="2"]
-
-process_mode = 1
-wait_time = 0.1
-one_shot = true
-autostart = false
-
-[node name="BrickTopBottom" type="Area2D" parent="." index="1"]
+[node name="BrickTop" type="Area2D" parent="." index="2"]
 
 position = Vector2( 0, -0.0248942 )
 input_pickable = true
@@ -84,7 +76,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CollisionTop" type="CollisionShape2D" parent="BrickTopBottom" index="0"]
+[node name="CollisionTop" type="CollisionShape2D" parent="BrickTop" index="0"]
 
 position = Vector2( 0, -6.38473 )
 rotation = 3.14159
@@ -92,34 +84,48 @@ shape = SubResource( 2 )
 one_way_collision = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionBottom" type="CollisionShape2D" parent="BrickTopBottom" index="1"]
+[node name="BrickBottom" type="Area2D" parent="." index="3"]
 
-position = Vector2( 0, 6.46138 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionBottom" type="CollisionShape2D" parent="BrickBottom" index="0"]
+
+position = Vector2( 0, 6.43649 )
 shape = SubResource( 2 )
 one_way_collision = true
 
-[node name="CollisionTimeout" type="Timer" parent="BrickTopBottom" index="2"]
+[node name="BrickLeft" type="Area2D" parent="." index="4"]
 
-process_mode = 1
-wait_time = 0.1
-one_shot = true
-autostart = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
 
-[node name="HittableTimout" type="Timer" parent="." index="2"]
+[node name="CollisionLeft" type="CollisionShape2D" parent="BrickLeft" index="0"]
 
-process_mode = 1
-wait_time = 0.25
-one_shot = false
-autostart = false
+position = Vector2( -22.2535, 0.0430756 )
+rotation = 1.5708
+shape = SubResource( 1 )
+one_way_collision = true
+_sections_unfolded = [ "Transform" ]
 
-[connection signal="area_entered" from="BrickSides" to="." method="_on_BrickSides_area_entered"]
+[connection signal="timeout" from="HittableTimeout" to="." method="_on_HittableTimeout_timeout"]
 
-[connection signal="timeout" from="BrickSides/CollisionTimeout" to="." method="_on_BrickSides_CollisionTimeout_timeout"]
+[connection signal="area_entered" from="BrickRight" to="." method="_on_Brick_area_entered"]
 
-[connection signal="area_entered" from="BrickTopBottom" to="." method="_on_BrickTopBottom_area_entered"]
+[connection signal="area_entered" from="BrickTop" to="." method="_on_Brick_area_entered"]
 
-[connection signal="timeout" from="BrickTopBottom/CollisionTimeout" to="." method="_on_BrickTopBottom_CollisionTimeout_timeout"]
+[connection signal="area_entered" from="BrickBottom" to="." method="_on_Brick_area_entered"]
 
-[connection signal="timeout" from="HittableTimout" to="." method="_on_HittableTimout_timeout"]
+[connection signal="area_entered" from="BrickLeft" to="." method="_on_Brick_area_entered"]
 
 
