@@ -1,20 +1,23 @@
 extends Node
 
+var LEVEL_COUNT = 3
+
 var lives = 3
 var score = 0
 
 var ball_scene
 var paddle_scene
-var level_scene
 
+var ball
 var paddle
 var level
 
 func _ready():
-	# Load the needed scenes
+	# Prepare the random seed
+	randomize()
+	# Load the always-needed scenes
 	ball_scene = load("res://Scenes/Ball/Ball.tscn")
 	paddle_scene = load("res://Scenes/Paddle/Paddle.tscn")
-	level_scene = load("res://Scenes/Levels/Level.tscn")
 
 func _on_Ball_death():
 	lives -= 1
@@ -42,22 +45,27 @@ func _on_MenuScreen_play_game():
 	# Create a paddle for the player
 	paddle = paddle_scene.instance()
 	add_child(paddle)
-	# Create a level
+	# Create a random level from the possible levels
+	var level_choice = randi() % (LEVEL_COUNT) + 1
+	var level_scene = load("res://Scenes/Levels/Level" + str(level_choice) + ".tscn")
 	level = level_scene.instance()
 	# Listen for the brick_destroyed signal from all the bricks in the level
 	for brick in level.get_children():
 		brick.connect("brick_destroyed", self, "increase_score")
+	level.connect("no_more_bricks", self, "game_over")
 	add_child(level)
 
 func game_over():
 	# Show the menu overlay
 	$MenuScreen.show()
+	# Destroy the ball
+	ball.queue_free()
 	# Destroy the player paddle
 	paddle.queue_free()
 	# Destroy the level
 	level.queue_free()
 
 func create_ball():
-	var ball = ball_scene.instance()
+	ball = ball_scene.instance()
 	ball.connect("death", self, "_on_Ball_death")
 	add_child(ball)

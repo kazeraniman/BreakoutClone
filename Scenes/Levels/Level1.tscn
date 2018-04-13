@@ -1,0 +1,402 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Levels/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Bricks/Brick.tscn" type="PackedScene" id=2]
+
+[node name="Bricks" instance=ExtResource( 1 )]
+
+[node name="Brick" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 280, 88 )
+health = 2
+
+[node name="Brick18" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 280, 104 )
+health = 2
+
+[node name="Brick10" parent="." index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 664, 88 )
+health = 2
+
+[node name="Brick48" parent="." index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 664, 56 )
+
+[node name="Brick49" parent="." index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 664, 120 )
+health = 1
+
+[node name="Brick30" parent="." index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 664, 104 )
+health = 2
+
+[node name="Brick54" parent="." index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 664, 72 )
+
+[node name="Brick73" parent="." index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 664, 136 )
+health = 1
+
+[node name="Brick6" parent="." index="8" instance=ExtResource( 2 )]
+
+position = Vector2( 472, 88 )
+health = 2
+
+[node name="Brick37" parent="." index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 472, 56 )
+
+[node name="Brick41" parent="." index="10" instance=ExtResource( 2 )]
+
+position = Vector2( 472, 120 )
+health = 1
+
+[node name="Brick20" parent="." index="11" instance=ExtResource( 2 )]
+
+position = Vector2( 472, 104 )
+health = 2
+
+[node name="Brick59" parent="." index="12" instance=ExtResource( 2 )]
+
+position = Vector2( 472, 72 )
+
+[node name="Brick67" parent="." index="13" instance=ExtResource( 2 )]
+
+position = Vector2( 472, 136 )
+health = 1
+
+[node name="Brick12" parent="." index="14" instance=ExtResource( 2 )]
+
+position = Vector2( 856, 88 )
+health = 2
+
+[node name="Brick42" parent="." index="15" instance=ExtResource( 2 )]
+
+position = Vector2( 856, 56 )
+
+[node name="Brick74" parent="." index="16" instance=ExtResource( 2 )]
+
+position = Vector2( 856, 120 )
+health = 1
+
+[node name="Brick25" parent="." index="17" instance=ExtResource( 2 )]
+
+position = Vector2( 856, 104 )
+health = 2
+
+[node name="Brick60" parent="." index="18" instance=ExtResource( 2 )]
+
+position = Vector2( 856, 72 )
+
+[node name="Brick68" parent="." index="19" instance=ExtResource( 2 )]
+
+position = Vector2( 856, 136 )
+health = 1
+
+[node name="Brick3" parent="." index="20" instance=ExtResource( 2 )]
+
+position = Vector2( 376, 88 )
+health = 2
+
+[node name="Brick33" parent="." index="21" instance=ExtResource( 2 )]
+
+position = Vector2( 376, 56 )
+
+[node name="Brick35" parent="." index="22" instance=ExtResource( 2 )]
+
+position = Vector2( 376, 120 )
+health = 1
+
+[node name="Brick17" parent="." index="23" instance=ExtResource( 2 )]
+
+position = Vector2( 376, 104 )
+health = 2
+
+[node name="Brick34" parent="." index="24" instance=ExtResource( 2 )]
+
+position = Vector2( 376, 72 )
+
+[node name="Brick36" parent="." index="25" instance=ExtResource( 2 )]
+
+position = Vector2( 376, 136 )
+health = 1
+
+[node name="Brick9" parent="." index="26" instance=ExtResource( 2 )]
+
+position = Vector2( 760, 88 )
+health = 2
+
+[node name="Brick40" parent="." index="27" instance=ExtResource( 2 )]
+
+position = Vector2( 760, 56 )
+
+[node name="Brick79" parent="." index="28" instance=ExtResource( 2 )]
+
+position = Vector2( 760, 120 )
+health = 1
+
+[node name="Brick23" parent="." index="29" instance=ExtResource( 2 )]
+
+position = Vector2( 760, 104 )
+health = 2
+
+[node name="Brick61" parent="." index="30" instance=ExtResource( 2 )]
+
+position = Vector2( 760, 72 )
+
+[node name="Brick71" parent="." index="31" instance=ExtResource( 2 )]
+
+position = Vector2( 760, 136 )
+health = 1
+
+[node name="Brick5" parent="." index="32" instance=ExtResource( 2 )]
+
+position = Vector2( 568, 88 )
+health = 2
+
+[node name="Brick50" parent="." index="33" instance=ExtResource( 2 )]
+
+position = Vector2( 568, 56 )
+
+[node name="Brick51" parent="." index="34" instance=ExtResource( 2 )]
+
+position = Vector2( 568, 120 )
+health = 1
+
+[node name="Brick31" parent="." index="35" instance=ExtResource( 2 )]
+
+position = Vector2( 568, 104 )
+health = 2
+
+[node name="Brick53" parent="." index="36" instance=ExtResource( 2 )]
+
+position = Vector2( 568, 72 )
+
+[node name="Brick55" parent="." index="37" instance=ExtResource( 2 )]
+
+position = Vector2( 568, 136 )
+health = 1
+
+[node name="Brick16" parent="." index="38" instance=ExtResource( 2 )]
+
+position = Vector2( 952, 88 )
+health = 2
+
+[node name="Brick32" parent="." index="39" instance=ExtResource( 2 )]
+
+position = Vector2( 952, 104 )
+health = 2
+
+[node name="Brick2" parent="." index="40" instance=ExtResource( 2 )]
+
+position = Vector2( 328, 88 )
+health = 2
+
+[node name="Brick19" parent="." index="41" instance=ExtResource( 2 )]
+
+position = Vector2( 328, 104 )
+health = 2
+
+[node name="Brick11" parent="." index="42" instance=ExtResource( 2 )]
+
+position = Vector2( 712, 88 )
+health = 2
+
+[node name="Brick47" parent="." index="43" instance=ExtResource( 2 )]
+
+position = Vector2( 712, 56 )
+
+[node name="Brick76" parent="." index="44" instance=ExtResource( 2 )]
+
+position = Vector2( 712, 120 )
+health = 1
+
+[node name="Brick29" parent="." index="45" instance=ExtResource( 2 )]
+
+position = Vector2( 712, 104 )
+health = 2
+
+[node name="Brick52" parent="." index="46" instance=ExtResource( 2 )]
+
+position = Vector2( 712, 72 )
+
+[node name="Brick62" parent="." index="47" instance=ExtResource( 2 )]
+
+position = Vector2( 712, 136 )
+health = 1
+
+[node name="Brick7" parent="." index="48" instance=ExtResource( 2 )]
+
+position = Vector2( 520, 88 )
+health = 2
+
+[node name="Brick38" parent="." index="49" instance=ExtResource( 2 )]
+
+position = Vector2( 520, 56 )
+
+[node name="Brick80" parent="." index="50" instance=ExtResource( 2 )]
+
+position = Vector2( 520, 120 )
+health = 1
+
+[node name="Brick21" parent="." index="51" instance=ExtResource( 2 )]
+
+position = Vector2( 520, 104 )
+health = 2
+
+[node name="Brick57" parent="." index="52" instance=ExtResource( 2 )]
+
+position = Vector2( 520, 72 )
+
+[node name="Brick70" parent="." index="53" instance=ExtResource( 2 )]
+
+position = Vector2( 520, 136 )
+health = 1
+
+[node name="Brick13" parent="." index="54" instance=ExtResource( 2 )]
+
+position = Vector2( 904, 88 )
+health = 2
+
+[node name="Brick46" parent="." index="55" instance=ExtResource( 2 )]
+
+position = Vector2( 904, 56 )
+
+[node name="Brick75" parent="." index="56" instance=ExtResource( 2 )]
+
+position = Vector2( 904, 120 )
+health = 1
+
+[node name="Brick28" parent="." index="57" instance=ExtResource( 2 )]
+
+position = Vector2( 904, 104 )
+health = 2
+
+[node name="Brick58" parent="." index="58" instance=ExtResource( 2 )]
+
+position = Vector2( 904, 72 )
+
+[node name="Brick72" parent="." index="59" instance=ExtResource( 2 )]
+
+position = Vector2( 904, 136 )
+health = 1
+
+[node name="Brick4" parent="." index="60" instance=ExtResource( 2 )]
+
+position = Vector2( 424, 88 )
+health = 2
+
+[node name="Brick44" parent="." index="61" instance=ExtResource( 2 )]
+
+position = Vector2( 424, 56 )
+
+[node name="Brick77" parent="." index="62" instance=ExtResource( 2 )]
+
+position = Vector2( 424, 120 )
+health = 1
+
+[node name="Brick27" parent="." index="63" instance=ExtResource( 2 )]
+
+position = Vector2( 424, 104 )
+health = 2
+
+[node name="Brick56" parent="." index="64" instance=ExtResource( 2 )]
+
+position = Vector2( 424, 72 )
+
+[node name="Brick69" parent="." index="65" instance=ExtResource( 2 )]
+
+position = Vector2( 424, 136 )
+health = 1
+
+[node name="Brick15" parent="." index="66" instance=ExtResource( 2 )]
+
+position = Vector2( 808, 88 )
+health = 2
+
+[node name="Brick43" parent="." index="67" instance=ExtResource( 2 )]
+
+position = Vector2( 808, 56 )
+
+[node name="Brick45" parent="." index="68" instance=ExtResource( 2 )]
+
+position = Vector2( 808, 120 )
+health = 1
+
+[node name="Brick26" parent="." index="69" instance=ExtResource( 2 )]
+
+position = Vector2( 808, 104 )
+health = 2
+
+[node name="Brick64" parent="." index="70" instance=ExtResource( 2 )]
+
+position = Vector2( 808, 72 )
+
+[node name="Brick66" parent="." index="71" instance=ExtResource( 2 )]
+
+position = Vector2( 808, 136 )
+health = 1
+
+[node name="Brick8" parent="." index="72" instance=ExtResource( 2 )]
+
+position = Vector2( 616, 88 )
+health = 2
+
+[node name="Brick39" parent="." index="73" instance=ExtResource( 2 )]
+
+position = Vector2( 616, 56 )
+
+[node name="Brick78" parent="." index="74" instance=ExtResource( 2 )]
+
+position = Vector2( 616, 120 )
+health = 1
+
+[node name="Brick22" parent="." index="75" instance=ExtResource( 2 )]
+
+position = Vector2( 616, 104 )
+health = 2
+
+[node name="Brick63" parent="." index="76" instance=ExtResource( 2 )]
+
+position = Vector2( 616, 72 )
+
+[node name="Brick65" parent="." index="77" instance=ExtResource( 2 )]
+
+position = Vector2( 616, 136 )
+health = 1
+
+[node name="Brick14" parent="." index="78" instance=ExtResource( 2 )]
+
+position = Vector2( 1000, 88 )
+health = 2
+
+[node name="Brick24" parent="." index="79" instance=ExtResource( 2 )]
+
+position = Vector2( 1000, 104 )
+health = 2
+
+[node name="Brick81" parent="." index="80" instance=ExtResource( 2 )]
+
+position = Vector2( 952, 72 )
+
+[node name="Brick82" parent="." index="81" instance=ExtResource( 2 )]
+
+position = Vector2( 952, 120 )
+health = 1
+
+[node name="Brick83" parent="." index="82" instance=ExtResource( 2 )]
+
+position = Vector2( 328, 120 )
+health = 1
+
+[node name="Brick84" parent="." index="83" instance=ExtResource( 2 )]
+
+position = Vector2( 328, 72 )
+
+
