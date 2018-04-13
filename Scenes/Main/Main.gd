@@ -18,10 +18,13 @@ func _ready():
 	# Load the always-needed scenes
 	ball_scene = load("res://Scenes/Ball/Ball.tscn")
 	paddle_scene = load("res://Scenes/Paddle/Paddle.tscn")
+	# Start the music
+	$MenuMusic.play()
 
 func _on_Ball_death():
 	lives -= 1
 	$HUD.set_lives(lives)
+	$DeathSound.play()
 	if lives > 0:
 		create_ball()
 	else:
@@ -47,6 +50,9 @@ func _on_MenuScreen_play_game():
 	generate_level()
 	# Create an inital ball
 	create_ball()
+	# Change up the music
+	$MenuMusic.stop()
+	$GameMusic.play()
 
 func game_over():
 	# Show the menu overlay
@@ -57,6 +63,13 @@ func game_over():
 	paddle.queue_free()
 	# Destroy the level
 	level.queue_free()
+	# Change up the music
+	$GameMusic.stop()
+	$MenuMusic.play()
+
+func brick_broken():
+	$BrickBreakSound.play()
+	increase_score()
 
 func create_ball():
 	ball = ball_scene.instance()
@@ -70,11 +83,13 @@ func generate_level():
 	level = level_scene.instance()
 	# Listen for the brick_destroyed signal from all the bricks in the level
 	for brick in level.get_children():
-		brick.connect("brick_destroyed", self, "increase_score")
+		brick.connect("brick_destroyed", self, "brick_broken")
 	level.connect("no_more_bricks", self, "next_game")
 	add_child(level)
 
 func next_game():
+	# Celebratory jingle
+	$RoundWinSound.play()
 	# Free the old resources
 	ball.queue_free()
 	paddle.queue_free()

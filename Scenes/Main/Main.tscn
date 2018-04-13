@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Main/Main.gd" type="Script" id=1]
 [ext_resource path="res://Art/background.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Walls/Walls.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/HUD/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/MenuScreen/MenuScreen.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Audio/Music/menu.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/Music/bg.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/Sounds/break.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/Sounds/death.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/Sounds/round_end.wav" type="AudioStream" id=10]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -33,6 +38,46 @@ _sections_unfolded = [ "Rect" ]
 [node name="HUD" parent="." index="2" instance=ExtResource( 4 )]
 
 [node name="MenuScreen" parent="." index="3" instance=ExtResource( 5 )]
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 6 )
+volume_db = -5.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="." index="5"]
+
+stream = ExtResource( 7 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="BrickBreakSound" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 8 )
+volume_db = -5.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 9 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="RoundWinSound" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 10 )
+volume_db = -10.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="play_game" from="MenuScreen" to="." method="_on_MenuScreen_play_game"]
 

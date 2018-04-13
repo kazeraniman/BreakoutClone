@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/round_end.wav-a6b576f2a9b44f5bd174de1be1ad3617.sample"
+
+[deps]
+
+source_file="res://Audio/Sounds/round_end.wav"
+source_md5="9ed7bdd4f47581313cf1eef629c6bf6b"
+
+dest_files=[ "res://.import/round_end.wav-a6b576f2a9b44f5bd174de1be1ad3617.sample" ]
+dest_md5="0a2d78c49723f59df220b7273cb643ca"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -43,6 +43,9 @@ func _on_Ball_area_entered(area):
 		var paddle_width = area.get_node("Sprite").region_rect.size.x / 4
 		var contact_position = clamp((position.x - area.position.x) / paddle_width, -2, 2)
 		velocity.x = contact_position
+	# Play the bounce sound only if not hitting the death zone
+	if area.get_name() != "DeathZone":
+		$BounceSound.play()
 
 func _on_LaunchTimer_timeout():
 	var launch_target_x = randi() % int(round(screen_size.x))
