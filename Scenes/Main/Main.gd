@@ -40,20 +40,13 @@ func _on_MenuScreen_play_game():
 	# Reset the lives
 	lives = 3
 	$HUD.set_lives(lives)
-	# Create an inital ball
-	create_ball()
 	# Create a paddle for the player
 	paddle = paddle_scene.instance()
 	add_child(paddle)
-	# Create a random level from the possible levels
-	var level_choice = randi() % (LEVEL_COUNT) + 1
-	var level_scene = load("res://Scenes/Levels/Level" + str(level_choice) + ".tscn")
-	level = level_scene.instance()
-	# Listen for the brick_destroyed signal from all the bricks in the level
-	for brick in level.get_children():
-		brick.connect("brick_destroyed", self, "increase_score")
-	level.connect("no_more_bricks", self, "game_over")
-	add_child(level)
+	# Generate a new level
+	generate_level()
+	# Create an inital ball
+	create_ball()
 
 func game_over():
 	# Show the menu overlay
@@ -69,3 +62,25 @@ func create_ball():
 	ball = ball_scene.instance()
 	ball.connect("death", self, "_on_Ball_death")
 	add_child(ball)
+
+func generate_level():
+	# Create a random level from the possible levels
+	var level_choice = randi() % (LEVEL_COUNT) + 1
+	var level_scene = load("res://Scenes/Levels/Level" + str(level_choice) + ".tscn")
+	level = level_scene.instance()
+	# Listen for the brick_destroyed signal from all the bricks in the level
+	for brick in level.get_children():
+		brick.connect("brick_destroyed", self, "increase_score")
+	level.connect("no_more_bricks", self, "next_game")
+	add_child(level)
+
+func next_game():
+	# Free the old resources
+	ball.queue_free()
+	paddle.queue_free()
+	level.queue_free()
+	# Generate new resources
+	paddle = paddle_scene.instance()
+	add_child(paddle)
+	generate_level()
+	create_ball()

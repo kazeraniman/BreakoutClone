@@ -9,7 +9,7 @@ custom_solver_bias = 0.0
 radius = 7.95074
 height = 49.5521
 
-[node name="Paddle" type="Area2D"]
+[node name="Paddle" type="Area2D" index="0"]
 
 position = Vector2( 640, 700 )
 input_pickable = true
@@ -18,7 +18,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 8
-collision_mask = 4
+collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
