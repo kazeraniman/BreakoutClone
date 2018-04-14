@@ -16,4 +16,4 @@ The game starts with a splash screen and then randomly selects one of 3 availabl
 
 ## Resource Attribution
 
-All resources which were not my creations are attributed in [attributions.md](attributions.md).
+All resources which were not my creations are attributed in [attribution.md](attribution.md).
