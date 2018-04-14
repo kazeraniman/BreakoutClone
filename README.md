@@ -14,6 +14,10 @@ The result can be seen in the screenshot below.
 
 The game starts with a splash screen and then randomly selects one of 3 available levels for you to play through.  Broken bricks increase the score and lives are deducted on missing the ball.  If the level is completed without dying 3 times, then another level is randomly selected and this will continue until all lives are exhaused.  The ball is fired at a random downward angle on launch each time and while walls and bricks bounce the ball in a fairly expected manner, contact with the paddle launches the ball at an angle in relation to the contact point in order to give the player more control over where the ball goes.
 
+## Controls
+
+The left and right arrow keys control the paddle.  The mouse is used only to start the game.
+
 ## Resource Attribution
 
 All resources which were not my creations are attributed in [attribution.md](attribution.md).
